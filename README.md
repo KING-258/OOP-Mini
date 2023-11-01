@@ -1,7 +1,5 @@
-## Introdução
+## Introduction
 
-Seja bem vindo!
-Se você curtiu a extensão, não esqueça de deixar uma avaliação!
+Welcome 
+This is a Project created by KING-258 in JavaFX
 
-Siga o canal no YouTube:
-- Academia dos Devs
