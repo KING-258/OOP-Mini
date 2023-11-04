@@ -6,7 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -43,7 +43,7 @@ public class App extends Application implements EventHandler<ActionEvent>
         TextField t1 = new TextField("User");
         Button b1 = new Button();//First
         Button b2 = new Button();//First
-        TextField t2 = new TextField("Password");
+        PasswordField t2 = new PasswordField();
         Label l2 = new Label("Password");
         Scene s1 = new Scene(g1, 2000, 2000);//First
         Scene s2 = new Scene(sp, 2000, 2000);//Second
