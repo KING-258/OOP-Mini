@@ -4,7 +4,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.*;
 import javafx.scene.layout.FlowPane;
@@ -35,8 +35,8 @@ public class App extends Application implements EventHandler<ActionEvent>
         Button b4 = new Button();//Third
         Button b5 = new Button();//Third
         Label l = new Label("Select a Category ");
-        ChoiceBox<String> c = new ChoiceBox<>();
-        ChoiceBox<String> c1 = new ChoiceBox<>();
+        ComboBox<String> c = new ComboBox<>();
+        ComboBox<String> c1 = new ComboBox<>();
         Button b = new Button();//Second
         Button b3 = new Button();//Second
         Label l1 = new Label("User_Name");

@@ -2,13 +2,14 @@ package p1;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class Amount
+public class Amount extends Thread
 {
     Stage window;
     Button b1;
+    String amount;
     public double Final(String a, int b, double c)
     {
         double am = 0;
@@ -67,11 +68,19 @@ public class Amount
         b1 = new Button();
         b1.setText("Close");
         b1.setOnAction(e -> window.close());
-        l.setText("Amount is : " + String.valueOf(am));
-        FlowPane g1 = new FlowPane();
-        g1.getChildren().addAll(l, b1);
-        //GridPane.setConstraints(b1, 5, 5);
-        //GridPane.setConstraints(l, 4, 4);
+        l.setText("Amount is : ");
+        amount = String.valueOf(am);
+        GridPane g1 = new GridPane();
+        g1.getChildren().add(l);
+        g1.getChildren().addAll(b1);
+        Label l0 = new Label(amount);
+        try{
+            Thread.sleep(500);
+            g1.getChildren().add(l0);
+        }catch(Exception e){}
+        GridPane.setConstraints(b1, 5, 5);
+        GridPane.setConstraints(l, 4, 4);
+        GridPane.setConstraints(l0, 5, 4);
         Scene s = new Scene(g1, 5000, 5000);
         window.setScene(s);
         window.show();
