@@ -138,14 +138,14 @@ public class App extends Application implements EventHandler<ActionEvent>
         return a;
     }
     public void handle(ActionEvent e){
-        FlowPane g = new FlowPane();
+        FlowPane g = new FlowPane(Orientation.VERTICAL);
         //FlowPane.setConstraints(g, 11, 9);
         Button b = new Button();
         b.setText("EXIT");
         b.setOnAction(f -> window.close());
         Scene s = new Scene(g, 250, 300);
         Label l = new Label("Final Amount is " + String.valueOf(m));
-        g.getChildren().addAll(l);
+        g.getChildren().addAll(l, b);
         window.setScene(s);
         window.show();
     }
