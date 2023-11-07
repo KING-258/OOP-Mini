@@ -9,7 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.*;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
+//import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import p1.*;
 public class App extends Application implements EventHandler<ActionEvent>
@@ -45,9 +45,9 @@ public class App extends Application implements EventHandler<ActionEvent>
         Button b2 = new Button();//First
         PasswordField t2 = new PasswordField();
         Label l2 = new Label("Password");
-        Scene s1 = new Scene(g1, 2000, 2000);//First
-        Scene s2 = new Scene(sp, 2000, 2000);//Second
-        Scene s3 = new Scene(g2, 2000, 2000);//Third
+        Scene s1 = new Scene(g1, 700, 700);//First
+        Scene s2 = new Scene(sp, 700, 700);//Second
+        Scene s3 = new Scene(g2, 700, 700);//Third
         Label l3 = new Label();
         TextField t3 = new TextField("Quantity or Weight in Grams");
         // GridPane.setConstraints(l1, 0, 0);
@@ -125,9 +125,9 @@ public class App extends Application implements EventHandler<ActionEvent>
         g2.setHgap(10);
         g2.setVgap(8);
         g2.getChildren().addAll(c,t3,b0,l0,b4,b5);
-        s1.setFill(Color.web("#FFFF00"));
-        s2.setFill(Color.web("#FFFF00"));
-        s3.setFill(Color.web("#FFFF00"));
+        //s1.setFill(Color.web("#FFFF00"));
+        //s2.setFill(Color.web("#FFFF00"));
+        //s3.setFill(Color.web("#FFFF00"));
         window.setScene(s1);
         window.show();
     }
