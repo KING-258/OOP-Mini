@@ -2,13 +2,14 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.*;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
+//import javafx.scene.layout.FlowPane;
 //import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import p1.*;
@@ -28,8 +29,8 @@ public class App extends Application implements EventHandler<ActionEvent>
         window = primaryStage;
         window.setTitle("New");
         FlowPane g1 = new FlowPane();//Welcome
-        GridPane sp = new GridPane();//Select Category
-        GridPane g2 = new GridPane();//Select Item
+        FlowPane sp = new FlowPane(Orientation.VERTICAL,10, 10);//Select Category
+        FlowPane g2 = new FlowPane(Orientation.VERTICAL,10, 10);//Select Item
         Label l0 = new Label();
         Button b0 = new Button();//Third
         Button b4 = new Button();//Third
@@ -50,23 +51,23 @@ public class App extends Application implements EventHandler<ActionEvent>
         Scene s3 = new Scene(g2, 700, 700);//Third
         Label l3 = new Label();
         TextField t3 = new TextField("Quantity or Weight in Grams");
-        // GridPane.setConstraints(l1, 0, 0);
-        // GridPane.setConstraints(t1, 1, 0);
-        // GridPane.setConstraints(l2, 0, 1);
-        // GridPane.setConstraints(t2, 1, 1);
-        // GridPane.setConstraints(b1, 3, 3);
-        // GridPane.setConstraints(b2, 3, 1);
-        GridPane.setConstraints(l3, 0, 0);
-        GridPane.setConstraints(l, 8, 8);
-        GridPane.setConstraints(c1, 9, 9);
-        GridPane.setConstraints(b, 9, 10);
-        GridPane.setConstraints(b3, 9, 7);
-        GridPane.setConstraints(l0, 0, 0);
-        GridPane.setConstraints(t3, 9, 9);
-        GridPane.setConstraints(c, 9, 10);
-        GridPane.setConstraints(b0, 11, 11);
-        GridPane.setConstraints(b4, 11, 7);
-        GridPane.setConstraints(b5, 12, 11);
+        // FlowPane.setConstraints(l1, 0, 0);
+        // FlowPane.setConstraints(t1, 1, 0);
+        // FlowPane.setConstraints(l2, 0, 1);
+        // FlowPane.setConstraints(t2, 1, 1);
+        // FlowPane.setConstraints(b1, 3, 3);
+        // FlowPane.setConstraints(b2, 3, 1);
+        // FlowPane.setConstraints(l3, 0, 0);
+        // FlowPane.setConstraints(l, 8, 8);
+        // FlowPane.setConstraints(c1, 9, 9);
+        // FlowPane.setConstraints(b, 9, 10);
+        // FlowPane.setConstraints(b3, 9, 7);
+        // FlowPane.setConstraints(l0, 0, 0);
+        // FlowPane.setConstraints(t3, 9, 9);
+        // FlowPane.setConstraints(c, 9, 10);
+        // FlowPane.setConstraints(b0, 11, 11);
+        // FlowPane.setConstraints(b4, 11, 7);
+        // FlowPane.setConstraints(b5, 12, 11);
         b1.setText("Enter");
         b1.setOnAction(e -> {
             u = t1.getText();
@@ -124,7 +125,7 @@ public class App extends Application implements EventHandler<ActionEvent>
         g2.setPadding(new Insets(10,10,10,10));
         g2.setHgap(10);
         g2.setVgap(8);
-        g2.getChildren().addAll(c,t3,b0,l0,b4,b5);
+        g2.getChildren().addAll(l0,c,t3,b0,b4,b5);
         //s1.setFill(Color.web("#FFFF00"));
         //s2.setFill(Color.web("#FFFF00"));
         //s3.setFill(Color.web("#FFFF00"));
@@ -138,7 +139,10 @@ public class App extends Application implements EventHandler<ActionEvent>
     }
     public void handle(ActionEvent e){
         FlowPane g = new FlowPane();
-        //GridPane.setConstraints(g, 11, 9);
+        //FlowPane.setConstraints(g, 11, 9);
+        Button b = new Button();
+        b.setText("EXIT");
+        b.setOnAction(f -> window.close());
         Scene s = new Scene(g, 250, 300);
         Label l = new Label("Final Amount is " + String.valueOf(m));
         g.getChildren().addAll(l);
