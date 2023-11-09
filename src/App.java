@@ -50,6 +50,7 @@ public class App extends Application implements EventHandler<ActionEvent>
         Scene s2 = new Scene(sp, 700, 700);//Second
         Scene s3 = new Scene(g2, 700, 700);//Third
         Label l3 = new Label();
+        Label l4 = new Label();
         TextField t3 = new TextField("Quantity or Weight in Grams");
         // FlowPane.setConstraints(l1, 0, 0);
         // FlowPane.setConstraints(t1, 1, 0);
@@ -102,7 +103,11 @@ public class App extends Application implements EventHandler<ActionEvent>
             Amount a1 = new Amount();
             int q;
             q=0;
-            q = Integer.parseInt(t3.getText());
+            try {
+                q = Integer.parseInt(t3.getText());
+            }catch(Exception e){
+                l4.setText("Try Again");
+            }
             m = a1.Final(c.getValue(), q, m);
         });
         b2.setText("Customer");
@@ -125,7 +130,7 @@ public class App extends Application implements EventHandler<ActionEvent>
         g2.setPadding(new Insets(10,10,10,10));
         g2.setHgap(10);
         g2.setVgap(8);
-        g2.getChildren().addAll(l0,c,t3,b0,b4,b5);
+        g2.getChildren().addAll(l0,c,t3,b0,b4,b5,l4);
         //s1.setFill(Color.web("#FFFF00"));
         //s2.setFill(Color.web("#FFFF00"));
         //s3.setFill(Color.web("#FFFF00"));
